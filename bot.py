@@ -104,6 +104,12 @@ def create_lead_in_telegram(name, phone, issue):
     return sent_msg
 
 
+# --- 0. ԳԼԽԱՎՈՐ ԷՋԻ ՍՏՈՒԳՈՒՄ (Հեռացնում է 404 սխալը բրաուզերում բացելիս) ---
+@app.route('/')
+def home():
+    return "404 Agency Backend & Telegram Bot-ը հաջողությամբ աշխատում է ամպում! 🚀", 200
+
+
 # --- 1. ԿԱՅՔԻՑ ՀԱՅՏԵՐԻ ՍՏԱՑՄԱՆ ENDPOINT ---
 @app.route('/submit-lead', methods=['POST'])
 def submit_lead():
