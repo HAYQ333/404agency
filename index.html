@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="hy" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Agency | Ինժեներական և ՏՏ Լուծումներ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0b0b0b',
+                            card: '#141416',
+                            border: '#222226',
+                            red: '#dc2626',
+                            redhover: '#ef4444'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0b0b;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(20, 20, 22, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .glass-card:hover {
+            border-color: rgba(220, 38, 38, 0.35);
+        }
+        .glow-red {
+            box-shadow: 0 0 70px -15px rgba(220, 38, 38, 0.22);
+        }
+        .text-glow {
+            text-shadow: 0 0 35px rgba(220, 38, 38, 0.4);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0b0b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222226;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-brand-border/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-brand-red/10 border border-brand-red/40 flex items-center justify-center text-brand-red font-bold text-lg group-hover:bg-brand-red group-hover:text-white transition-all duration-300 shadow-lg shadow-brand-red/20 font-mono">
+                    404
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-extrabold tracking-wider text-white">404 <span class="text-brand-red">AGENCY</span></span>
+                    <span class="text-[9px] uppercase tracking-widest text-gray-400 font-mono">Systems & Engineering</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-brand-red transition-colors">Մեր մասին</a>
+                <a href="#services" class="hover:text-brand-red transition-colors">Ինչով ենք զբաղվում</a>
+                <a href="#works" class="hover:text-brand-red transition-colors">Աշխատանքներ</a>
+                <a href="#contact" class="hover:text-brand-red transition-colors">Կապ</a>
+            </nav>
+
+            <!-- Telegram Button -->
+            <div class="hidden md:flex items-center">
+                <a href="https://t.me/+37433686160" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-brand-red hover:bg-brand-redhover text-white text-sm font-semibold transition-all duration-200 shadow-lg shadow-brand-red/30 flex items-center space-x-2">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Telegram</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-brand-border px-6 py-6 space-y-4">
+            <a href="#about" class="block text-gray-300 hover:text-brand-red font-medium text-base">Մեր մասին</a>
+            <a href="#services" class="block text-gray-300 hover:text-brand-red font-medium text-base">Ինչով ենք զբաղվում</a>
+            <a href="#works" class="block text-gray-300 hover:text-brand-red font-medium text-base">Աշխատանքներ</a>
+            <a href="#contact" class="block text-gray-300 hover:text-brand-red font-medium text-base">Կապ</a>
+            <div class="pt-4 border-t border-brand-border">
+                <a href="https://t.me/+37433686160" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-2 w-full py-3 rounded-xl bg-brand-red text-white font-semibold">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Գրել Telegram-ում</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f29370a_1px,transparent_1px),linear-gradient(to_bottom,#1f29370a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-brand-red/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2.5 px-4 py-2 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold tracking-wider uppercase backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
+                    <span>Ինժեներական & ՏՏ Լուծումներ • Հայաստան</span>
+                </div>
+
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1]">
+                    404 <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-400 text-glow">AGENCY</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Պրոֆեսիոնալ համակարգչային սարքավորումների վերանորոգում, ներդրված համակարգեր, ծրագրավորում, կիբեռանվտանգություն և ինժեներական մշակումներ։
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-redhover text-white font-semibold transition-all duration-200 shadow-xl shadow-brand-red/30 flex items-center justify-center space-x-2">
+                        <span>Ինչով ենք զբաղվում</span>
+                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://t.me/+37433686160" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card hover:border-brand-red/50 text-white font-semibold transition-all duration-200 flex items-center justify-center space-x-2">
+                        <i data-lucide="send" class="w-4 h-4 text-brand-red"></i>
+                        <span>Կապ Telegram-ում</span>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-brand-border max-w-lg mx-auto lg:mx-0">
+                    <div>
+                        <div class="text-2xl font-bold text-white font-mono">100%</div>
+                        <div class="text-xs text-gray-400 mt-0.5">Որակ և Ախտորոշում</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white font-mono">24/7</div>
+                        <div class="text-xs text-gray-400 mt-0.5">Աջակցություն</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-brand-red font-mono">+374</div>
+                        <div class="text-xs text-gray-400 mt-0.5">Հայաստան</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Hero Box -->
+            <div class="lg:col-span-5">
+                <div class="glass-card rounded-2xl p-6 shadow-2xl glow-red border border-brand-border relative overflow-hidden">
+                    <div class="flex items-center justify-between pb-4 border-b border-brand-border mb-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <div class="text-xs font-mono text-gray-400 flex items-center space-x-1.5">
+                            <i data-lucide="terminal" class="w-3.5 h-3.5 text-brand-red"></i>
+                            <span>404-sys@armenia:~#</span>
+                        </div>
+                    </div>
+
+                    <div id="terminal-content" class="font-mono text-xs sm:text-sm text-gray-300 space-y-3 min-h-[240px] max-h-[300px] overflow-y-auto">
+                        <p class="text-gray-500">[System Boot]: 404 Agency ինժեներական միջավայր...</p>
+                        <p class="text-brand-red">> status --hardware-repair --active</p>
+                        <p class="text-gray-300">✓ Համակարգիչների և սարքավորումների վերանորոգում։</p>
+                        <p class="text-brand-red">> status --embedded --online</p>
+                        <p class="text-gray-300">✓ Էմբեդեդ համակարգեր, FPV & UAV դրոններ։</p>
+                        <p class="text-green-400">> ready: ՀԱՄԱԿԱՐԳԸ ՊԱՏՐԱՍՏ Է ԾԱՌԱՅՈՒԹՅԱՆ։</p>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-brand-border flex items-center space-x-2">
+                        <span class="text-brand-red font-mono text-sm">$</span>
+                        <input type="text" id="terminal-input" placeholder="Մուտքագրեք հրաման (help, repair, services)..." class="w-full bg-transparent border-none outline-none font-mono text-xs sm:text-sm text-white placeholder-gray-600">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section (Մեր մասին) -->
+    <section id="about" class="py-24 bg-brand-dark relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold uppercase">
+                        Մեր մասին
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Ինժեներական մտքի և տեխնիկական վարպետության միավորում
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        <strong class="text-white">404 Agency</strong>-ն առաջատար ինժեներական և ՏՏ ընկերություն է Հայաստանում։ Մենք մասնագիտացված ենք ինչպես հաշվողական տեխնիկայի ու համակարգիչների վերանորոգման, այնպես էլ բարդ ներդրված (embedded) համակարգերի, ավիոնիկայի և անվտանգության լուծումների մշակմամբ։
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Մեր նպատակն է ստեղծել կայուն, հուսալի և բարձրորակ համակարգեր՝ ապահովելով անզիջում որակ ցանկացած տեխնիկական մարտահրավերի դեպքում։
+                    </p>
+                    <div class="pt-4 grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl glass-card">
+                            <div class="text-2xl font-bold text-white font-mono">1000+</div>
+                            <div class="text-xs text-gray-400 mt-1">Վերանորոգված սարքեր</div>
+                        </div>
+                        <div class="p-4 rounded-xl glass-card">
+                            <div class="text-2xl font-bold text-brand-red font-mono">100%</div>
+                            <div class="text-xs text-gray-400 mt-1">Վստահելիություն</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="glass-card rounded-3xl p-8 sm:p-10 border border-brand-border glow-red relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 text-brand-red/10 font-mono text-8xl font-black select-none pointer-events-none">
+                            404
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Մեր Արժեքները</h3>
+                        <ul class="space-y-4 text-sm text-gray-300">
+                            <li class="flex items-start space-x-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5"></i>
+                                <div><strong class="text-white">Ճշգրիտ ախտորոշում.</strong> Ժամանակակից սարքավորումների կիրառում խնդիրների բացահայտման համար։</div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5"></i>
+                                <div><strong class="text-white">Բաղադրիչային մակարդակ.</strong> Մայր պլատաների, միկրոսխեմաների խորքային վերականգնում։</div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5"></i>
+                                <div><strong class="text-white">Նորարարություն.</strong> Ժամանակակից ծրագրային և ինժեներական մոտեցումներ։</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Ինչով ենք զբաղվում) -->
+    <section id="services" class="py-24 bg-brand-card/30 border-t border-brand-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold tracking-wider uppercase">
+                    Ինչով ենք զբաղվում
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Մեր Ծառայությունները</h2>
+                <p class="text-gray-400">Մասնագիտացված ուղղություններ համակարգչային վերանորոգման և բարդ ինժեներական լուծումների ոլորտում։</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. Համակարգիչների և սարքավորումների վերանորոգում -->
+                <div class="glass-card rounded-2xl p-8 transition-all duration-300 group flex flex-col justify-between border-brand-red/30 bg-brand-card/90">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/40 flex items-center justify-center text-brand-red mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                            <i data-lucide="wrench" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Համակարգիչների և Սարքավորումների Վերանորոգում</h3>
+                        <p class="text-gray-400 leading-relaxed text-sm mb-6">
+                            Հաշվողական տեխնիկայի խորացված ախտորոշում, մայր պլատաների վերականգնում, բաղադրիչների փոխարինում, հզոր խաղային համակարգիչների և սերվերների հավաքում ու սպասարկում:
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-brand-border">
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">Hardware Repair</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">Diagnostics</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">Custom PC</span>
+                    </div>
+                </div>
+
+                <!-- 2. Էմբեդեդ համակարգեր -->
+                <div class="glass-card rounded-2xl p-8 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                            <i data-lucide="cpu" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Էմբեդեդ Համակարգեր (Embedded Systems)</h3>
+                        <p class="text-gray-400 leading-relaxed text-sm mb-6">
+                            Միկրոկարգավորիչների (STM32, ESP32) ծրագրավորում, IoT սարքերի ստեղծում, սենսորների և սխեմաների նախագծում:
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-brand-border">
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">STM32</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">ESP32</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">IoT</span>
+                    </div>
+                </div>
+
+                <!-- 3. Ծրագրավորում -->
+                <div class="glass-card rounded-2xl p-8 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                            <i data-lucide="code-2" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Ծրագրավորում & Ավտոմատացում</h3>
+                        <p class="text-gray-400 leading-relaxed text-sm mb-6">
+                            Բարձր արդյունավետության ծրագրային ապահովում C, C++, Python և JavaScript լեզուներով, սկրիպտներ ու ավտոմատացված համակարգեր:
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-brand-border">
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">C / C++</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">Python</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">Automation</span>
+                    </div>
+                </div>
+
+                <!-- 4. Անօդաչու թռչող սարքեր և FPV -->
+                <div class="glass-card rounded-2xl p-8 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                            <i data-lucide="navigation" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Անօդաչու Թռչող Սարքեր և FPV</h3>
+                        <p class="text-gray-400 leading-relaxed text-sm mb-6">
+                            UAV / FPV դրոնների հավաքում, ավիոնիկայի կարգավորում, կառավարման պլատաների նախագծում և թռիչքային փորձարկումներ։
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-brand-border">
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">FPV Drones</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">Avionics</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">UAV</span>
+                    </div>
+                </div>
+
+                <!-- 5. Կիբեռանվտանգություն -->
+                <div class="glass-card rounded-2xl p-8 transition-all duration-300 group flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                            <i data-lucide="shield-alert" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Կիբեռանվտանգություն & Ցանցային Պաշտպանություն</h3>
+                        <p class="text-gray-400 leading-relaxed text-sm mb-6">
+                            Խոցելիության ստուգումներ (Penetration Testing), ցանցային անվտանգության աուդիտ, սերվերային պաշտպանվածության բարձրացում և կորպորատիվ տվյալների անվտանգության ապահովում:
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-brand-border">
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">PenTesting</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">Security Audit</span>
+                        <span class="px-2.5 py-1 rounded-md bg-brand-dark text-xs font-mono text-gray-300 border border-brand-border">Network Defense</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Works Section (Մեր կատարած աշխատանքները) -->
+    <section id="works" class="py-24 bg-brand-dark border-t border-brand-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold tracking-wider uppercase">
+                    Մեր կատարած աշխատանքները
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Ընտրանի Նախագծերից</h2>
+                <p class="text-gray-400">Համակարգիչների վերանորոգման, սարքաշինության և ինժեներական մշակումների իրական օրինակներ։</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Work 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden group border border-brand-border">
+                    <div class="h-48 bg-gradient-to-br from-brand-card to-brand-border relative flex items-center justify-center p-6 overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-red/5 group-hover:bg-brand-red/10 transition-colors"></div>
+                        <i data-lucide="wrench" class="w-16 h-16 text-brand-red/60 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-dark/80 text-[10px] font-mono text-brand-red border border-brand-red/30">Hardware Repair</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-white">Մայր Պլատաների Վերականգնում</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Բարդ բաղադրիչային վերանորոգում, միկրոսխեմաների փոխարինում և հոսանքի շղթաների վերականգնում լաբորատոր սարքավորումներով։
+                        </p>
+                        <div class="pt-2 flex items-center text-xs font-mono text-brand-red space-x-1">
+                            <span>Կարգավիճակ: Ավարտված</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden group border border-brand-border">
+                    <div class="h-48 bg-gradient-to-br from-brand-card to-brand-border relative flex items-center justify-center p-6 overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-red/5 group-hover:bg-brand-red/10 transition-colors"></div>
+                        <i data-lucide="cpu" class="w-16 h-16 text-brand-red/60 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-dark/80 text-[10px] font-mono text-brand-red border border-brand-red/30">Embedded IoT</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-white">IoT Մոնիտորինգի Համակարգ</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            STM32 միկրոկարգավորիչների վրա հիմնված տվյալների հավաքագրման և անլար փոխանցման արդյունաբերական սարք։
+                        </p>
+                        <div class="pt-2 flex items-center text-xs font-mono text-brand-red space-x-1">
+                            <span>Կարգավիճակ: Հանձնված է</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden group border border-brand-border">
+                    <div class="h-48 bg-gradient-to-br from-brand-card to-brand-border relative flex items-center justify-center p-6 overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-red/5 group-hover:bg-brand-red/10 transition-colors"></div>
+                        <i data-lucide="navigation" class="w-16 h-16 text-brand-red/60 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-dark/80 text-[10px] font-mono text-brand-red border border-brand-red/30">FPV Drones</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-white">FPV Դրոնների Հավաքում & Ավիոնիկա</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Թռչող սարքերի էլեկտրական սխեմաների մոնտաժում, թռիչքային կարգավորիչների կալիբրացիա և թեստավորում։
+                        </p>
+                        <div class="pt-2 flex items-center text-xs font-mono text-brand-red space-x-1">
+                            <span>Կարգավիճակ: Թեստավորված</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Կապ) -->
+    <section id="contact" class="py-24 bg-brand-card/30 border-t border-brand-border relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold uppercase">
+                        Կապ մեզ հետ
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Սկսենք ձեր նախագիծը կամ վերանորոգումը</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Ունե՞ք համակարգչի նորոգման կարիք, տեխնիկական խնդիր կամ ինժեներական առաջադրանք։ Կապվեք մեզ հետ անմիջապես։
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <a href="tel:+37433686160" class="flex items-center space-x-4 p-4 rounded-xl glass-card transition-colors group">
+                            <div class="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase tracking-wider font-mono">Հեռախոսահամար</div>
+                                <div class="text-lg font-bold text-white font-mono">+374 33 686160</div>
+                            </div>
+                        </a>
+
+                        <a href="https://t.me/+37433686160" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 p-4 rounded-xl glass-card transition-colors group">
+                            <div class="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all">
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase tracking-wider font-mono">Telegram Մեսենջեր</div>
+                                <div class="text-lg font-bold text-white font-mono">+374 33 686160</div>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-xl glass-card">
+                            <div class="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase tracking-wider font-mono">Գտնվելու վայրը</div>
+                                <div class="text-lg font-bold text-white">Հայաստան</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-2xl p-8 sm:p-10 relative overflow-hidden">
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono">Ձեր Անունը</label>
+                                    <input type="text" id="name" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-red transition-colors text-sm" placeholder="Անուն Ազգանուն">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono">Հեռախոս / Telegram</label>
+                                    <input type="text" id="contact-info" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-red transition-colors text-sm" placeholder="+374 ...">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono">Ծառայության Ուղղություն</label>
+                                <select id="domain" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-red transition-colors text-sm">
+                                    <option>Համակարգիչների և Սարքավորումների Վերանորոգում</option>
+                                    <option>Էմբեդեդ Համակարգեր (Embedded Systems)</option>
+                                    <option>Ծրագրավորում & Ավտոմատացում</option>
+                                    <option>Անօդաչու Թռչող Սարքեր և FPV</option>
+                                    <option>Կիբեռանվտանգություն</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono">Հաղորդագրություն կամ խնդրի նկարագրություն</label>
+                                <textarea id="message" rows="4" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-red transition-colors text-sm" placeholder="Նկարագրեք ձեր սարքի խնդիրը կամ նախագծի պահանջները..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 rounded-xl bg-brand-red hover:bg-brand-redhover text-white font-semibold transition-all duration-200 shadow-lg shadow-brand-red/30 flex items-center justify-center space-x-2">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                <span>Ուղարկել Հարցումը</span>
+                            </button>
+                        </form>
+
+                        <!-- Success Modal Overlay -->
+                        <div id="success-overlay" class="hidden absolute inset-0 glass-card flex flex-col items-center justify-center p-8 text-center space-y-4">
+                            <div class="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400">
+                                <i data-lucide="check" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Հարցումը Հաջողությամբ Ուղարկվեց</h3>
+                            <p class="text-sm text-gray-400 max-w-sm">Շնորհակալություն։ Մեր թիմը ստացել է ձեր հաղորդագրությունը և շատ շուտով կկապվի ձեզ հետ։</p>
+                            <button onclick="resetContactForm()" class="px-6 py-2.5 rounded-xl bg-brand-red text-white text-sm font-semibold">Ուղարկել նոր հաղորդագրություն</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 glass-card border-t border-brand-border text-center text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+                <span class="font-mono text-gray-300">&copy; 2026 404 Agency. Բոլոր իրավունքները պաշտպանված են։ Հայաստան։</span>
+            </div>
+            <div class="flex space-x-6 font-medium">
+                <a href="#about" class="hover:text-brand-red transition-colors">Մեր մասին</a>
+                <a href="#services" class="hover:text-brand-red transition-colors">Ինչով ենք զբաղվում</a>
+                <a href="#works" class="hover:text-brand-red transition-colors">Աշխատանքներ</a>
+                <a href="https://t.me/+37433686160" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors">Telegram (+374 33 686160)</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact Form handler with backend fetch (Cloudflare Tunnel URL connected)
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('contact-info').value;
+            const domain = document.getElementById('domain').value;
+            const message = document.getElementById('message').value;
+            
+            const issue = `[${domain}] ${message}`;
+
+            try {
+                // Cloudflare Tunnel-ից ստացված ընթացիկ հանրային հղումը
+                const response = await fetch('https://enhance-latitude-murray-arabic.trycloudflare.com/submit-lead', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, phone, issue })
+                });
+
+                if (response.ok) {
+                    document.getElementById('success-overlay').classList.remove('hidden');
+                } else {
+                    alert('Սխալ տեղի ունեցավ հայտը ուղարկելիս։');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Սերվերի հետ կապի խնդիր: Համոզվեք, որ cloudflared-ը և բոտը միացված են։');
+            }
+        }
+
+        function resetContactForm() {
+            document.getElementById('contact-form').reset();
+            document.getElementById('success-overlay').classList.add('hidden');
+        }
+
+        // Terminal Simulator
+        const terminalInput = document.getElementById('terminal-input');
+        const terminalContent = document.getElementById('terminal-content');
+
+        terminalInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const cmd = terminalInput.value.trim().toLowerCase();
+                if (!cmd) return;
+
+                const userP = document.createElement('p');
+                userP.className = 'text-white font-mono';
+                userP.textContent = '$ ' + terminalInput.value;
+                terminalContent.appendChild(userP);
+
+                const responseP = document.createElement('p');
+                responseP.className = 'font-mono text-gray-300';
+
+                if (cmd === 'help') {
+                    responseP.innerHTML = 'Հրամաններ: <span class="text-brand-red">repair</span>, <span class="text-brand-red">services</span>, <span class="text-brand-red">contact</span>, <span class="text-brand-red">about</span>, <span class="text-brand-red">clear</span>';
+                } else if (cmd === 'repair') {
+                    responseP.textContent = '-> Պրոֆեսիոնալ համակարգչային սարքավորումների վերանորոգում և ախտորոշում։';
+                } else if (cmd === 'services') {
+                    responseP.textContent = '-> 1. Համակարգիչների վերանորոգում | 2. Էմբեդեդ համակարգեր | 3. Ծրագրավորում | 4. FPV դրոններ | 5. Կիբեռանվտանգություն.';
+                } else if (cmd === 'about') {
+                    responseP.textContent = '-> 404 Agency: Ինժեներական և ՏՏ թիմ Հայաստանից։';
+                } else if (cmd === 'contact') {
+                    responseP.textContent = '-> Հեռ / Telegram: +374 33 686160.';
+                } else if (cmd === 'clear') {
+                    terminalContent.innerHTML = '<p class="text-gray-500">[System Boot]: Տերմինալը մաքրված է։</p>';
+                    terminalInput.value = '';
+                    return;
+                } else {
+                    responseP.innerHTML = `<span class="text-red-400">Անհայտ հրաման՝ '${cmd}': Մուտքագրեք 'help'։</span>`;
+                }
+
+                terminalContent.appendChild(responseP);
+                terminalInput.value = '';
+                terminalContent.scrollTop = terminalContent.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
