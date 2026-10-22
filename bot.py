@@ -28,7 +28,6 @@ CORS(app)  # Թույլատրում է հարցումներ կայքից
 def init_db():
     conn = sqlite3.connect('tasks.db')
     cursor = conn.cursor()
-    # Հայտերի աղյուսակ (կայքից և /lead-ից եկող)
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS tasks (
             message_id INTEGER PRIMARY KEY,
@@ -40,7 +39,6 @@ def init_db():
             assignee TEXT
         )
     ''')
-    # Ներքին Task-երի աղյուսակ (/task հրամանի համար)
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS team_tasks (
             message_id INTEGER PRIMARY KEY,
@@ -104,7 +102,7 @@ def create_lead_in_telegram(name, phone, issue):
     return sent_msg
 
 
-# --- 0. ԳԼԽԱՎՈՐ ԷՋԻ ՍՏՈՒԳՈՒՄ (Հեռացնում է 404 սխալը բրաուզերում բացելիս) ---
+# --- 0. ԳԼԽԱՎՈՐ ԷՋԻ ՍՏՈՒԳՈՒՄ ---
 @app.route('/')
 def home():
     return "404 Agency Backend & Telegram Bot-ը հաջողությամբ աշխատում է ամպում! 🚀", 200
@@ -161,7 +159,8 @@ def manual_lead(message):
 
     try:
         create_lead_in_telegram(name, phone, issue)
-        bot.reply_to(message, "✅ Հայտը հաջողությամբ ավելացվեց Ակտիվ հայտերի բաժին։")
+        # Ավտոմատ ջնջում ենք ադմինի գրած հրամանը
+        bot.delete_message(message.chat.id, message.message_id)
     except Exception as e:
         bot.reply_to(message, f"❌ Սխալ տեղի ունեցավ: {e}")
 
@@ -219,7 +218,8 @@ def manual_task(message):
         conn.commit()
         conn.close()
 
-        bot.reply_to(message, "✅ Առաջադրանքը հաջողությամբ ուղարկվեց Առաջադրանքների թեմա (24)։")
+        # Ավտոմատ ջնջում ենք հրամանի հաղորդագրությունը
+        bot.delete_message(message.chat.id, message.message_id)
     except Exception as e:
         bot.reply_to(message, f"❌ Սխալ տեղի ունեցավ ուղարկելիս: {e}")
 
