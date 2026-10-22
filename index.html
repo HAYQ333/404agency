@@ -204,7 +204,7 @@
         </div>
     </section>
 
-    <!-- About Us Section (Մեր մասին) -->
+    <!-- About Us Section -->
     <section id="about" class="py-24 bg-brand-dark relative border-t border-brand-border">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -259,7 +259,7 @@
         </div>
     </section>
 
-    <!-- Services Section (Ինչով ենք զբաղվում) -->
+    <!-- Services Section -->
     <section id="services" class="py-24 bg-brand-card/30 border-t border-brand-border relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -271,7 +271,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 1. Համակարգիչների և սարքավորումների վերանորոգում -->
+                <!-- 1. Համակարգիչների վերանորոգում -->
                 <div class="glass-card rounded-2xl p-8 transition-all duration-300 group flex flex-col justify-between border-brand-red/30 bg-brand-card/90">
                     <div>
                         <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/40 flex items-center justify-center text-brand-red mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
@@ -325,7 +325,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Անօդաչու թռչող սարքեր և FPV -->
+                <!-- 4. Անօդաչու թռչող սարքեր -->
                 <div class="glass-card rounded-2xl p-8 transition-all duration-300 group flex flex-col justify-between">
                     <div>
                         <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
@@ -364,7 +364,7 @@
         </div>
     </section>
 
-    <!-- Portfolio / Works Section (Մեր կատարած աշխատանքները) -->
+    <!-- Portfolio Section -->
     <section id="works" class="py-24 bg-brand-dark border-t border-brand-border relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -433,7 +433,7 @@
         </div>
     </section>
 
-    <!-- Contact Section (Կապ) -->
+    <!-- Contact Section -->
     <section id="contact" class="py-24 bg-brand-card/30 border-t border-brand-border relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -555,7 +555,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Contact Form handler with backend fetch (Cloudflare Tunnel URL connected)
+        // Contact Form handler pointing to Render backend
         async function handleFormSubmit(e) {
             e.preventDefault();
             
@@ -567,8 +567,7 @@
             const issue = `[${domain}] ${message}`;
 
             try {
-                // Cloudflare Tunnel-ից ստացված ընթացիկ հանրային հղումը
-                const response = await fetch('https://enhance-latitude-murray-arabic.trycloudflare.com/submit-lead', {
+                const response = await fetch('https://four04agency.onrender.com/submit-lead', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -583,7 +582,7 @@
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Սերվերի հետ կապի խնդիր: Համոզվեք, որ cloudflared-ը և բոտը միացված են։');
+                alert('Սերվերի հետ կապի խնդիր: Համոզվեք, որ բոտը աշխատում է։');
             }
         }
 
